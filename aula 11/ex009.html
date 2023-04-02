@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    <h1>Nascionalidade</h1>
+    Nome do Pais:
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Enviar" onclick="verificar()">
+    <div id="local"></div>
+    <script>
+        
+
+        function verificar() {
+            //var ps = document.querySelector('input#pais');
+            var local = document.querySelector('div#local');
+            var ps = pais.value;
+            
+            local.innerHTML = `<p>O pais digitado foi: ${ps} e </p>`
+            if (ps != "Brasil") {
+                local.innerHTML += `<p>O pais Não é o Brasil</p>`
+            }else {
+                local.innerHTML += '<p>O pais é o brasil</p>'
+            }
+        }
+    </script>
+</body>
+</html>
