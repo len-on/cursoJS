@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Saber as Horas</h1>
+    Diferença entre a hora atual e a hora desejada:
+    <input type="number" name="hora" id="hora">
+    <input type="button" value="Enviar" onclick="verificar()">
+    <div id="imprime"></div>
+
+    <script>
+        function verificar(){
+            var desejado = Number(hora.value);
+            var imprime = document.querySelector('div#imprime');
+            var atual = new Date();
+            atual = Number(atual.getHours());
+            if (atual == desejado) {
+                imprime.innerHTML = `São ${atual} e o horario desejado é identico ao atual.`;
+            }else if (desejado < atual) {
+                var x = atual - desejado;
+                imprime.innerHTML = `São ${atual} e ja se passaram ${x} horas desde a hora atual`;
+            }else {
+                var x = (atual - desejado) * -1;
+                imprime.innerHTML = `São ${atual} e faltam ${x} horas ate o horário desejado`;
+            }
+        }
+    </script>
+</body>
+</html>
